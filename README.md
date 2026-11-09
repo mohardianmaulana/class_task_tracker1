@@ -104,13 +104,13 @@ Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal An
     php artisan serve
 
 Akun contoh untuk login
+* **Role Guru:**
+  * **Email:** `guru1@gmail.com`
+  * **Password:** `password123`
 
-a. Role guru
-    email : guru1@gmail.com
-    password : password123
-b. Role siswa
-    email : siswa1@gmail.com
-    password : password123
+* **Role Siswa:**
+  * **Email:** `siswa1@gmail.com`
+  * **Password:** `password123`
 
 Daftar Endpoint API
 1. Register
