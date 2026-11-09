@@ -81,5 +81,69 @@ Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal An
    cd class-task-tracker
 
 2. composer install
+    ```bash
+    composer install
 
-3. 
+3. Salin File Konfigurasi Environment
+    ```bash
+    cp .env.example .env
+
+4. Generate App Key
+    ```bash
+    php artisan key:generate
+
+5. Konfigurasi Database
+    Buka file .env, lalu sesuaikan bagian koneksi database dengan database lokal Anda (misalnya menggunakan MySQL/MariaDB)
+
+6. Jalankan Migrasi Database
+    ```bash
+    php artisan migrate --seed
+
+7. Jalankan Server Lokal
+    ```bash
+    php artisan serve
+
+Akun contoh untuk login
+
+a. Role guru
+    email : guru1@gmail.com
+    password : password123
+b. Role siswa
+    email : siswa1@gmail.com
+    password : password123
+
+Daftar Endpoint API
+1. Register
+    http://127.0.0.1:8000/api/register
+2. Login
+    http://127.0.0.1:8000/api/login
+3. Logout
+    http://127.0.0.1:8000/api/logout
+4. Get task
+    http://127.0.0.1:8000/api/tasks
+5. Store task
+    http://127.0.0.1:8000/api/tasks/{id}
+6. Update task
+    http://127.0.0.1:8000/api/tasks/{id}
+7. Delete task
+    http://127.0.0.1:8000/api/tasks/{id}
+8. Accept task
+    http://127.0.0.1:8000/api/tasks/{id}/complete
+
+Keputusan desain yang diambil
+```bash
+Penggunaan Laravel Sanctum: Dipilih karena ringan dan sangat ideal untuk autentikasi berbasis API (Token-based authentication) pada aplikasi SPA atau Mobile.
+
+Pemisahan Validasi dengan Form Request: Menggunakan kelas TaskRequest dan UserRequest terpisah agar controller tetap bersih (clean code) dan logika validasi serta pesan error terpusat dengan rapi.
+
+Otorisasi Berbasis Role: Menerapkan pembatasan rute menggunakan middleware berdasarkan role (guru dan siswa) untuk memastikan keamanan data sesuai hak akses masing-masing pengguna.
+
+Sebenarnya ingin menerapkan Service-repository pattern, tapi dikarenakan waktu yang kurang, akhirnya tidak jadi menggunakan
+
+Bagian yang belum selesai
+```bash
+Fitur-fitur berikut belum sempat diselesaikan pada tahap ini dan akan dikerjakan jika ada waktu tambahan:
+
+Fitur Lanjutan pada Daftar Tugas (GET /api/tasks): Pencarian tugas berdasarkan judul, filter berdasarkan status (selesai atau belum), serta penerapan paginasi data.
+
+Frontend Antarmuka Web: Pembuatan tampilan antarmuka web interaktif yang mencakup seluruh alur kerja (dari login, manajemen tugas, hingga status loading dan pesan error yang jelas bagi pengguna).
