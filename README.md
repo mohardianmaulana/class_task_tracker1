@@ -130,7 +130,7 @@ Daftar Endpoint API
 8. Accept task
     http://127.0.0.1:8000/api/tasks/{id}/complete
 
-Keputusan desain yang diambil
+* **Keputusan desain yang diambil**
 Penggunaan Laravel Sanctum: Dipilih karena ringan dan sangat ideal untuk autentikasi berbasis API (Token-based authentication) pada aplikasi SPA atau Mobile.
 
 Pemisahan Validasi dengan Form Request: Menggunakan kelas TaskRequest dan UserRequest terpisah agar controller tetap bersih (clean code) dan logika validasi serta pesan error terpusat dengan rapi.
@@ -139,7 +139,7 @@ Otorisasi Berbasis Role: Menerapkan pembatasan rute menggunakan middleware berda
 
 Sebenarnya ingin menerapkan Service-repository pattern, tapi dikarenakan waktu yang kurang, akhirnya tidak jadi menggunakan
 
-Bagian yang belum selesai
+* **Bagian yang belum selesai**
 Fitur-fitur berikut belum sempat diselesaikan pada tahap ini dan akan dikerjakan jika ada waktu tambahan:
 
 Fitur Lanjutan pada Daftar Tugas (GET /api/tasks): Pencarian tugas berdasarkan judul, filter berdasarkan status (selesai atau belum), serta penerapan paginasi data.
