@@ -64,3 +64,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Class Task Tracker API
+
+Class Task Tracker adalah aplikasi backend berbasis Laravel yang dirancang untuk mengelola tugas kelas antara Guru dan Siswa. Aplikasi ini menggunakan autentikasi Laravel Sanctum dan memisahkan hak akses berdasarkan role (Guru dan Siswa).
+
+---
+
+## 🚀 Cara Menjalankan Aplikasi dari Nol (Langkah Demi Langkah)
+
+Ikuti langkah-langkah berikut untuk menjalankan project ini di komputer lokal Anda:
+
+1. **Clone Repository**
+   ```bash
+   git clone <https://github.com/mohardianmaulana/class_task_tracker1.git>
+   cd class-task-tracker
+
+2. composer install
+
+3. 
