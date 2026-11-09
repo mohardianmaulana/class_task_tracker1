@@ -25,6 +25,7 @@ Route::post('/register', [LoginController::class, 'register']);
 
 // Grup rute yang membutuhkan autentikasi Sanctum
 Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout']);
     
     // Khusus Role siswa
     Route::middleware('role:siswa')->group(function() {
@@ -34,6 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Khusus Role Guru
     Route::middleware('role:guru')->group(function () {
+        Route::get('/tasks', [TaskController::class, 'index']);
         Route::post('/tasks', [TaskController::class, 'store']);
         Route::put('/tasks/{task}', [TaskController::class, 'update']);
         Route::delete('/tasks/{task}', [TaskController::class, 'delete']);

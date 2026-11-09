@@ -15,8 +15,7 @@ class TaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'teacher_id' => ['required', 'exists:users,id', Rule::exists('users', 'id')->where('role', 'guru')],
-            'class_id' => 'required|exists:classes, id',
+            'class_id' => 'required|exists:classes,id',
             'title' => 'required|string|min:5',
             'description' => 'nullable|string|min:5',
             'deadline' => 'required|date',

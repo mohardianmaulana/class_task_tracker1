@@ -16,10 +16,10 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:5',
-            'email' => 'required|string|unique',
+            'email' => 'required|string|unique:user,email',
             'password' => 'required|string',
             'role' => 'required|in:guru,siswa',
-            'class_id' => 'required|exists:classes, id',
+            'class_id' => 'required|exists:classes,id',
         ];
     }
 

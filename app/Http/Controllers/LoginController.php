@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Hash;
 class LoginController {
     public function register(UserRequest $request) {
         try {
-            $user = User::create($request->validated());
+            $validated = $request->validated();
+        
+            // Hash password sebelum disimpan
+            $validated['password'] = Hash::make($validated['password']);
+            $user = User::create($validated);
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
